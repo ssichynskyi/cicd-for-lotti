@@ -5,10 +5,15 @@ and
 [Lotti Karotti-calculator-testing-task](https://github.com/ssichynskyi/testing-task-lotti-karotti-calculator)
 
 # Content
+## Linux
+folder "linux" contains all necessary for building for this OS:
 - folder "local" contains bash files to execute testing and compilation on local linux and windows PC
 - main folder contains jenkinsfile for CI on jenkinsfile other resources specific to Jenkins are stored
 in "jenkins" folder
 - common resources for both solutions stored in folder "common"
+## Windows
+folder "linux" contains all necessary for building for this OS:
+-TBD
 
 # Usage
 ## Local build
