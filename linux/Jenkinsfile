@@ -64,7 +64,7 @@ pipeline {
                     sh 'touch game'
                 }
                 sh 'chmod -R 777 artifacts/'
-                sh '''common/build.sh \
+                sh '''linux/common/build.sh \
                     SOURCE-FOLDER=$WORKSPACE/lotti-karotti-calculator/ \
                     SCRIPT=game.py \
                     DEST-FOLDER=$WORKSPACE/artifacts/ \
