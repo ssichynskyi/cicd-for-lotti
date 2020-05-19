@@ -1,13 +1,29 @@
 #!/usr/bin/groovy
 
+def image
+
 pipeline {
     agent any
     stages {
-        stage('Create linux docker images') {
+        stage('Create linux docker building image') {
             steps {
-                sh 'linux/jenkins/rebuild_docker_images_for_jenkins.sh'
+                script {
+                    image = docker.build(
+                            "lotti-building-image",
+                            "-f ./linux/jenkins/docker-files/for-building-jenkins ./linux/jenkins/docker-files"
+                    )
+                }
             }
-
+        }
+        stage('Create linux docker running image') {
+            steps {
+                script {
+                    image = docker.build(
+                            "lotti-running-image",
+                            "-f ./linux/common/docker-files/for-running ./linux/common/docker-files"
+                    )
+                }
+            }
         }
     }
     post {
