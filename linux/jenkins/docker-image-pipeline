@@ -1,0 +1,24 @@
+#!/usr/bin/groovy
+
+pipeline {
+    agent any()
+    stages {
+        stage('Create linux docker images') {
+            steps {
+                sh 'linux/jenkins/rebuild_docker_images_for_jenkins.sh'
+            }
+
+        }
+    }
+    post {
+        success {
+            echo 'Docker images prepared'
+        }
+        failure {
+            echo 'Failed to prepare docker images'
+        }
+        changed {
+            echo 'The status of the pipeline has changed'
+        }
+    }
+}

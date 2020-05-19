@@ -25,3 +25,5 @@ jobs/**/*workspace
 
 # ignore idea files:
 .idea/
+src/
+pipeline.gdsl
