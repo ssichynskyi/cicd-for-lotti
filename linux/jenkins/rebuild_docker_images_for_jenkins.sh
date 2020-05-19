@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # set default values for some command line arguments
-BUILDING_DOCKER_FILE=$(realpath docker-files/for-building-jenkins)
-RUNNING_DOCKER_FILE=$(realpath ../common/docker-files/for-running)
+#BUILDING_DOCKER_FILE=$(realpath docker-files/for-building-jenkins)
+#RUNNING_DOCKER_FILE=$(realpath ../common/docker-files/for-running)
 
 # set default values
 for ARGUMENT in "$@"
